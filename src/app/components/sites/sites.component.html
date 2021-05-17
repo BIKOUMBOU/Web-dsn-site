@@ -5,11 +5,7 @@
 		<li>
 			<button (click)="GetAllSites()" class="btn btn-sm btn-outline-info ml-2">Lister</button>
 
-			<button (click)="NewSite()" class="btn btn-sm btn-outline-info ml-2">Nouveau</button>
-		</li>
-
-		<li>
-			<button (click)="UpdateSite()" class="btn btn-sm btn-outline-info ml-2">Modifier</button>
+			<!-- <button (click)="NewSite()" class="btn btn-sm btn-outline-info ml-2">Nouveau</button> -->
 		</li>
 	</ul>
 
@@ -55,12 +51,11 @@
 					<thead class="center-thead-dark">
 
 						<tr>
-								<th>
+							
 								<!-- <span class="custom-checkbox">
 									<input type="checkbox" id="selectAll">
 									<label for="selectAll"></label>
 								</span> -->
-							</th>
 
 							<!-- <th (click)="sort('id')">Id&nbsp;<i class=" fa fa-sort text-center th-sm"></i></th> -->
 							<th class="text-center th-sm">Id </th>
@@ -73,6 +68,7 @@
 							<th class="text-center th-sm">ResProjet </th>
 							<th class="text-center th-sm">ConsulDsn </th>
 							<th class="text-center th-sm">VersAgirh </th>
+							<th class="text-center th-sm">Versprodige </th>
 							<th class="text-center th-sm">Ifp </th>
 							<th class="text-center th-sm">Mirth </th>
 							<th class="text-center th-sm">WebserPH7 </th>
@@ -81,11 +77,9 @@
 							<th class="text-center th-sm">NomencdesAbsences</th>
 							<th class="text-center th-sm">NomencdesEmplois </th>
 							<th class="text-center th-sm">NomencdeStatuts </th>
-							<th class="text-center th-sm">ProgressionConfig </th>
-							<th class="text-center"></th>
-							<th class="text-center">ACTIONS </th>
-							<th class="text-center"></th>
+							<th class="text-center">ACTIONS</th>
 							
+					
 						</tr>
 
 					</thead>
@@ -95,13 +89,7 @@
 					   <!-- <tr *ngFor="let s of result.data | orderBy : key : reverse | paginate: {itemsPerPage:14,currentPage:p};">  -->
 						 <tr *ngFor="let s of result.data ">
 
-								<td>
-								<span class="custom-checkbox">
-									<input type="checkbox" id="checkbox1" name="options[]" value="1">
-									<label for="checkbox1"></label>
-								</span>
-							</td>
-
+						
 							<td>{{s.id}} </td>
 							<td>{{s.priorite}} </td>
 							<td>{{s.nom}} </td>
@@ -121,7 +109,21 @@
 							<td>{{s.nomencdesabsences}} </td>
 							<td>{{s.nomencdesemplois}} </td>
 							<td>{{s.nomencdestatuts}} </td>
-						
+							
+							<td>
+								<button class="btn btn-success ml-2" (click)="Edit(s)">
+									<span class="fa fa-eye"></span>
+								</button>
+
+								<button class="btn btn-info ml-2" (click)="Edit(s)">
+									<span class="fa fa-edit"></span>
+								</button>
+
+								<button class="btn btn-danger ml-2" (click)="DeleteSite(s)">
+									<span class="fa fa-trash-o"></span>
+								</button>
+							
+							</td>
 
 					<!-- 		<td>
 								<button (click)="onSelect(s)" [ngClass]="s.selected?'btn-success':'btn-success'"
@@ -130,24 +132,7 @@
 								</button>
 							</td> -->
 
-							<td>
-								<button class="btn btn-success" (click)="Edit(s)">
-									<span class="fa fa-eye"></span>
-								</button>
-							</td>
-
-							<td>
-								<button class="btn btn-info" (click)="Edit(s)">
-									<span class="fa fa-edit"></span>
-								</button>
-							</td>
-
-							<td>
-								<button class="btn btn-danger" (click)="DeleteSite(s)">
-									<span class="fa fa-trash-o"></span>
-								</button>
-							</td>
-
+							
 						</tr>
 					</tbody>
 					<!-- <pagination-controls>(pageChange)="p = $event"</pagination-controls> -->

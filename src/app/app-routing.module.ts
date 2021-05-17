@@ -9,6 +9,7 @@ import { SiteInfosComponent } from './site-infos/site-infos.component';
 
 const routes: Routes = [
   {path:"sites", component:SitesComponent},
+  {path:"GetAllSites", component:SitesComponent},
   {path:"newSite", component:SiteAddComponent},
   {path:"editSite/:id", component:SiteEditComponent},
   {path:"updateSite", component:SiteEditComponent},
