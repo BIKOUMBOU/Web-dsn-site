@@ -1,0 +1,123 @@
+<div>
+    <h2> Vue détaillée </h2>
+</div>
+
+<div class="container">
+    <div class="card-header -xl">
+        <div class="container" *ngIf="siteFormGroup">
+            <!--    {{siteFormGroup.value|json}} -->
+            <form [formGroup]="siteFormGroup">
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">Nom</label>
+                    <input type="text" class="form-control" id="inputState" name="priorite" class="form-control"
+                        formControlName="nom" [ngClass]="{'is-invalid':submitted && siteFormGroup.controls.nom.errors}">
+                    <div *ngIf="submitted && siteFormGroup.controls.nom.errors" class="invalid-feedback">
+                        <div *ngIf="siteFormGroup.controls.nom.errors.required">Name is Required</div>
+                    </div>
+                </div>
+
+
+        <div class="form-group">
+            <label>Priorité</label>
+            <input type="text" class="form-control" formControlName="priorite">
+        </div> 
+
+        <div class="form-group">
+            <label>Siren</label>
+            <input type="text" class="form-control" formControlName="siren">
+        </div> 
+
+               
+        <div class="form-group">
+            <label>StatusInstal</label>
+            <input type="text" class="form-control" formControlName="statusinstal">
+        </div>
+
+
+        <div class="form-group">
+            <label>hebergement</label>
+            <input type="text" class="form-control" formControlName="hebergement">
+        </div> 
+
+        
+        <div class="form-group">
+            <label>Acces</label>
+            <input type="text" class="form-control" formControlName="acces">
+        </div> 
+
+
+        <div class="form-group">
+            <label>Resprojet</label>
+            <input type="text" class="form-control" formControlName="resprojet">
+        </div>
+
+
+        <div class="form-group">
+            <label>Consuldsn</label>
+            <input type="text" class="form-control" formControlName="consuldsn">
+        </div> 
+
+
+        <div class="form-group">
+            <label>Versagirh</label>
+            <input type="text" class="form-control" formControlName="versagirh">
+        </div>
+
+        <div class="form-group row">
+            <label for="inputState" class="col-sm- col-form-label">VersAgirh</label>                    
+            <input id="inputState" name="versagirh" class="form-control" formControlName="versagirh">
+        </div>
+
+
+        <div class="form-group">
+            <label>Versprodige</label>
+            <input type="text" class="form-control" formControlName="versprodige">
+        </div> 
+
+        
+        <div class="form-group">
+            <label>Mirth</label>
+            <input type="text" class="form-control" formControlName="mirth">
+        </div> 
+
+
+        <div class="form-group">
+            <label>Ifp</label>
+            <input type="text" class="form-control" formControlName="ifp">
+        </div> 
+
+
+        <div class="form-group">
+            <label>Websph7</label>
+            <input type="text" class="form-control" formControlName="webserph7">
+        </div>
+
+        <div class="form-group">
+            <label>Configprodige</label>
+            <input type="text" class="form-control" formControlName="configprodige">
+        </div> 
+
+        <div class="form-group">
+            <label>Nomencdesabsences</label>
+            <input type="text" class="form-control" formControlName="nomencdesabsences">
+        </div> 
+
+
+        <div class="form-group">
+            <label>Nomencdestatuts</label>
+            <input type="text" class="form-control" formControlName="nomencdestatuts">
+        </div>
+
+
+        <div class="form-group">
+        <label>Nomencdesemplois</label>
+        <input type="text" class="form-control" formControlName="nomencdesemplois">
+        </div> 
+
+
+                <div class="modal-footer">
+                    <button class="btn btn-success" (click)="onUpdateSite()">Fermer</button>
+                </div>
+            </form>
+        </div>

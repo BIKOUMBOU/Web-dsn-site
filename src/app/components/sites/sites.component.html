@@ -1,0 +1,166 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-sm bg-darck navbar-dark">
+
+	<ul class="navbar navbar-nav ">
+		<li>
+			<button (click)="GetAllSites()" class="btn btn-sm btn-outline-info ml-2">Lister</button>
+
+			<button (click)="NewSite()" class="btn btn-sm btn-outline-info ml-2">Nouveau</button>
+		</li>
+
+		<li>
+			<button (click)="UpdateSite()" class="btn btn-sm btn-outline-info ml-2">Modifier</button>
+		</li>
+	</ul>
+
+	 <ul class="navbar navbar-nav ml-auto">
+		<li>
+			<form #f="ngForm" (ngSubmit)="SearchSites(f.value)" class="form-inline">
+				<div class="form-group">
+					<input ngModel name="keyword" type="text">
+					<button class="btn btn-sm btn-outline-info ml-2">
+						<span class="fa fa-search"></span>
+					</button>
+				</div>
+			</form>
+		</li>
+
+	</ul> 
+
+</nav>
+
+<!-- FONCTION_BOUTONS -->
+
+<ng-container *ngIf="(sites$ | async) as result" [ngSwitch]="result.dataState">
+	<!-- {{result|json}} -->
+
+	<ng-container *ngSwitchCase="DataStateEnum.LOADING">
+		Loading . . .
+	</ng-container>
+
+	<ng-container *ngSwitchCase="DataStateEnum.LOADING">
+		<div class="alert-danger">
+			{{result.errorMessage}}
+		</div>
+	</ng-container>
+
+	<!-- FONCTION_TABLE -->
+
+	<ng-container *ngSwitchCase="DataStateEnum.LOADED">
+		<div class="card-header -xl ">
+			<div class="table-responsive -xl">
+				<table id="dtHorizontalExample"
+					class="table table-hover table-striped table-bordered table-sm table-wrapper-scroll-y my-custom-scrollbar"
+					cellspacing="0" width="100%">
+					<thead class="center-thead-dark">
+
+						<tr>
+								<th>
+								<!-- <span class="custom-checkbox">
+									<input type="checkbox" id="selectAll">
+									<label for="selectAll"></label>
+								</span> -->
+							</th>
+
+							<!-- <th (click)="sort('id')">Id&nbsp;<i class=" fa fa-sort text-center th-sm"></i></th> -->
+							<th class="text-center th-sm">Id </th>
+							<th class="text-center th-sm">Priorité </th>
+							<th class="text-center th-sm">Nom </th>
+							<th class="text-center th-sm">Siren </th>
+							<th class="text-center th-sm">StatusInstal </th>
+							<th class="text-center th-sm">Hebergement </th>
+							<th class="text-center th-sm">Acces </th>
+							<th class="text-center th-sm">ResProjet </th>
+							<th class="text-center th-sm">ConsulDsn </th>
+							<th class="text-center th-sm">VersAgirh </th>
+							<th class="text-center th-sm">Ifp </th>
+							<th class="text-center th-sm">Mirth </th>
+							<th class="text-center th-sm">WebserPH7 </th>
+							<th class="text-center th-sm">ConfigAgirh </th>
+							<th class="text-center th-sm">ConfigProdige </th>
+							<th class="text-center th-sm">NomencdesAbsences</th>
+							<th class="text-center th-sm">NomencdesEmplois </th>
+							<th class="text-center th-sm">NomencdeStatuts </th>
+							<th class="text-center th-sm">ProgressionConfig </th>
+							<th class="text-center"></th>
+							<th class="text-center">ACTIONS </th>
+							<th class="text-center"></th>
+							
+						</tr>
+
+					</thead>
+					<tbody>
+
+
+					   <!-- <tr *ngFor="let s of result.data | orderBy : key : reverse | paginate: {itemsPerPage:14,currentPage:p};">  -->
+						 <tr *ngFor="let s of result.data ">
+
+								<td>
+								<span class="custom-checkbox">
+									<input type="checkbox" id="checkbox1" name="options[]" value="1">
+									<label for="checkbox1"></label>
+								</span>
+							</td>
+
+							<td>{{s.id}} </td>
+							<td>{{s.priorite}} </td>
+							<td>{{s.nom}} </td>
+							<td>{{s.siren}} </td>
+							<td>{{s.statusinstal}} </td>
+							<td>{{s.hebergement}} </td>
+							<td>{{s.acces}} </td>
+							<td>{{s.resprojet}} </td>
+							<td>{{s.consuldsn}} </td>
+							<td>{{s.versagirh}} </td>
+							<td>{{s.versprodige}} </td>
+							<td>{{s.ifp}} </td>
+							<td>{{s.mirth}} </td>
+							<td>{{s.webserph7}} </td>
+							<td>{{s.configagirh}} </td>
+							<td>{{s.configprodige}} </td>
+							<td>{{s.nomencdesabsences}} </td>
+							<td>{{s.nomencdesemplois}} </td>
+							<td>{{s.nomencdestatuts}} </td>
+						
+
+					<!-- 		<td>
+								<button (click)="onSelect(s)" [ngClass]="s.selected?'btn-success':'btn-success'"
+									class="btn btn-success">
+									<span class="fa fa-eye"></span>
+								</button>
+							</td> -->
+
+							<td>
+								<button class="btn btn-success" (click)="Edit(s)">
+									<span class="fa fa-eye"></span>
+								</button>
+							</td>
+
+							<td>
+								<button class="btn btn-info" (click)="Edit(s)">
+									<span class="fa fa-edit"></span>
+								</button>
+							</td>
+
+							<td>
+								<button class="btn btn-danger" (click)="DeleteSite(s)">
+									<span class="fa fa-trash-o"></span>
+								</button>
+							</td>
+
+						</tr>
+					</tbody>
+					<!-- <pagination-controls>(pageChange)="p = $event"</pagination-controls> -->
+				</table>
+			</div>
+		</div>
+	</ng-container>
+</ng-container>
+
+<!-- <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+    <li class="page-item"><a class="page-link" href="#">5</a></li>
+  </ul> -->

@@ -1,15 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SitesComponent } from './components/sites/sites.component';
+import { AccueilComponent } from './components/accueil/accueil.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule} from '@angular/common/http';
+import { SitesService} from './services/sites.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SiteAddComponent } from './components/site-add/site-add.component';
+import { SiteEditComponent } from './components/site-edit/site-edit.component';
+import { SiteInfosComponent } from './site-infos/site-infos.component';
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    SitesComponent,
+    AccueilComponent,
+    SiteAddComponent,
+    SiteEditComponent,
+    SiteInfosComponent,
+ 
+   
   ],
+
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule 
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

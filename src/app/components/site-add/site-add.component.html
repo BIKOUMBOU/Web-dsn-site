@@ -1,0 +1,296 @@
+<div>
+    <h2> Nouvel enregistrement Site </h2>
+</div>
+<div class="container">
+    <div class="card-header -xl">
+        <div class="container" *ngIf="siteFormGroup">
+            <!--    {{siteFormGroup.value|json}} -->
+            <form [formGroup]="siteFormGroup">
+
+
+                <!--  <div class="form-group">
+            <label>Nom</label> 
+            <input type="text" class="form-control" formControlName="nom">
+        </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">Nom</label>
+                    <input type="text" class="form-control" id="inputState" name="priorite" class="form-control"
+                        formControlName="nom" [ngClass]="{'is-invalid':submitted && siteFormGroup.controls.nom.errors}">
+                    <div *ngIf="submitted && siteFormGroup.controls.nom.errors" class="invalid-feedback">
+                        <div *ngIf="siteFormGroup.controls.nom.errors.required">Name is Required</div>
+                    </div>
+                </div>
+
+
+                <!--   <div class="form-group">
+            <label>Priorité</label>
+            <input type="text" class="form-control" formControlName="priorite">
+        </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">Priorite</label>
+                    <select id="inputState" name="priorite" class="form-control" formControlName="priorite">
+                        <option selected></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <!-- <div class="form-group">
+            <label>Siren</label>
+            <input type="text" class="form-control" formControlName="siren">
+        </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">Siren</label>
+                    <input id="inputState" name="siren" class="form-control" formControlName="siren">
+                </div>
+
+                <!-- <div class="form-group">
+            <label>StatusInstal</label>
+            <input type="text" class="form-control" formControlName="statusinstal">
+        </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">StatusInstal</label>
+                    <select id="inputState" name="statusinstal" class="form-control" formControlName="statusinstal">
+                        <option selected></option>
+                        <option>Débuté</option>
+                        <option>En cours</option>
+                        <option>Terminé</option>
+                        <option>Prêt</option>
+                    </select>
+                </div>
+
+                <!--  <div class="form-group">
+            <label>hebergement</label>
+            <input type="text" class="form-control" formControlName="hebergement">
+        </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">Hebergement</label>
+                    <select id="inputState" name="hebergement" class="form-control" formControlName="hebergement">
+                        <option selected></option>
+                        <option>Autonome</option>
+                        <option>Hébergé</option>
+                    </select>
+                </div>
+
+
+                <!--  <div class="form-group">
+            <label>Acces</label>
+            <input type="text" class="form-control" formControlName="acces">
+        </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">Acces</label>
+                    <textarea input id="inputState" name="acces" class="form-control"
+                        formControlName="acces"></textarea>
+                </div>
+
+
+                <!-- <div class="form-group">
+            <label>Resprojet</label>
+            <input type="text" class="form-control" formControlName="resprojet">
+        </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">ResProjet</label>
+                    <select id="inputState" name="resprojet" class="form-control" formControlName="resprojet">
+                        <option selected></option>
+                        <option>Christophe CHANSON </option>
+                        <option>Edouard LABESSE </option>
+                        <option>Guillaume LECLERE</option>
+                        <option>Hamid ELJAOUDI</option>
+                        <option>Sandrine SARTORI</option>
+                        <option>Vincent EYCHENNE</option>
+                    </select>
+                </div>
+
+
+                <!--  <div class="form-group">
+                    <label>Consuldsn</label>
+                    <input type="text" class="form-control" formControlName="consuldsn">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">ConsulDsn</label>
+                    <select id="inputState" name="consuldsn" class="form-control" formControlName="consuldsn">
+                        <option selected></option>
+                        <option>Anne-Sophie VANTOMME</option>
+                        <option>Aurelie DUPUIS </option>
+                        <option>Laurent TREBOUTTE</option>
+                        <option>Lydia BUDYNEK</option>
+                        <option>Séverine LEBLANC</option>
+                    </select>
+                </div>
+
+
+                <!-- <div class="form-group">
+                    <label>Versagirh</label>
+                    <input type="text" class="form-control" formControlName="versagirh">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">VersAgirh</label>
+                    <input id="inputState" name="versagirh" class="form-control" formControlName="versagirh">
+                </div>
+
+
+                <!-- <div class="form-group">
+                    <label>Versprodige</label>
+                    <input type="text" class="form-control" formControlName="versprodige">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">VersProdige</label>
+                    <input id="inputState" name="versprodige" class="form-control" formControlName="versprodige">
+                </div>
+
+
+
+                <!--  <div class="form-group">
+                    <label>Mirth</label>
+                    <input type="text" class="form-control" formControlName="mirth">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">Mirth</label>
+                    <select id="inputState" name="mirth" class="form-control" formControlName="mirth">
+                        <option selected></option>
+                        <option>En cours</option>
+                        <option>Configuré</option>
+                        <option>Fonctionnel</option>
+                        <option>Terminé</option>
+                    </select>
+                </div>
+
+<!-- 
+                <div class="form-group">
+                    <label>Ifp</label>
+                    <input type="text" class="form-control" formControlName="ifp">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">Ifp</label>
+                    <select id="inputState" name="ifp" class="form-control" formControlName="ifp">
+                        <option selected></option>
+                        <option>En cours</option>
+                        <option>Configuré</option>
+                        <option>Fonctionnel</option>
+                        <option>Terminé</option>
+                    </select>
+                </div>
+
+
+               <!--  <div class="form-group">
+                    <label>Websph7</label>
+                    <input type="text" class="form-control" formControlName="webserph7">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">WebSerph7</label>
+                    <select id="inputState" name="webserph7" class="form-control" formControlName="webserph7">
+                        <option selected></option>
+                        <option>En cours</option>
+                        <option>Configuré</option>
+                        <option>Fonctionnel</option>
+                        <option>Terminé</option>
+                    </select>
+                </div>
+
+
+               <!--  <div class="form-group">
+                    <label>Configagirh</label>
+                    <input type="text" class="form-control" formControlName="configagirh">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">ConfigAgirh</label>
+                    <select id="inputState" name="configagirh" class="form-control" formControlName="configagirh">
+                        <option selected></option>
+                        <option>En cours</option>
+                        <option>Configuré</option>
+                        <option>Fonctionnelle</option>
+                        <option>Terminée</option>
+                    </select>
+                </div>
+
+
+              <!--   <div class="form-group">
+                    <label>Configprodige</label>
+                    <input type="text" class="form-control" formControlName="configprodige">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">ConfigProdige</label>
+                    <select id="inputState" name="configprodige" class="form-control" formControlName="configprodige">
+                        <option selected></option>
+                        <option>En cours</option>
+                        <option>Configuré</option>
+                        <option>Fonctionnelle</option>
+                        <option>Terminée</option>
+                    </select>
+                </div>
+
+
+                <!-- <div class="form-group">
+                    <label>Nomencdesabsences</label>
+                    <input type="text" class="form-control" formControlName="nomencdesabsences">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">NomencdesAbsences</label>
+                    <select id="inputState" name="nomencdesabsences" class="form-control" formControlName="nomencdesabsences">
+                        <option selected></option>
+                        <option>En cours</option>
+                        <option>Configurée</option>
+                        <option>Fonctionnelle</option>
+                        <option>Terminée</option>
+                    </select>
+                </div>
+
+                <!-- <div class="form-group">
+                    <label>Nomencdestatuts</label>
+                    <input type="text" class="form-control" formControlName="nomencdestatuts">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">NomencdeStatuts</label>
+                    <select id="inputState" name="nomencdestatuts" class="form-control" formControlName="nomencdestatuts">
+                        <option selected></option>
+                        <option>En cours</option>
+                        <option>Configurée</option>
+                        <option>Fonctionnelle</option>
+                        <option>Terminée</option>
+                    </select>
+                </div>
+
+               <!--  <div class="form-group">
+                    <label>Nomencdesemplois</label>
+                    <input type="text" class="form-control" formControlName="nomencdesemplois">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">NomencdesEmplois</label>
+                    <select id="inputState" name="nomencdesemplois" class="form-control" formControlName="nomencdesemplois">
+                        <option selected></option>
+                        <option>En cours</option>
+                        <option>Configurée</option>
+                        <option>Fonctionnelle</option>
+                        <option>Terminée</option>
+                    </select>
+                </div>
+
+
+        <div class="modal-footer">
+            <button class="btn btn-success" (click)="onAddSite()">Enregistrer</button>
+            <input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+
+        </div>
+    </form>
+</div>
