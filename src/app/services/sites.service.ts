@@ -18,6 +18,11 @@ getAllSites():Observable<Site[]>{
   return this.http.get<Site[]>(host+"/sites");
 }
 
+getSites():Observable<Site[]>{
+  let host=environment.host;
+  return this.http.get<Site[]>(host+"/sites");
+}
+
 getSite(id:number):Observable<Site>{
   let host=environment.host;
   return this.http.get<Site>(host+"/site/"+id);
@@ -34,7 +39,12 @@ addSites(site:Site):Observable<Site>{
 }
 
 
-updateSite(site:Site):Observable<Site>{
+/* updateSite(site:Site):Observable<Site>{
+  let host=environment.host;
+  return this.http.put<Site>(host+"/updateSite/",site);
+} */
+
+editSite(site:Site):Observable<Site>{
   let host=environment.host;
   return this.http.put<Site>(host+"/updateSite/",site);
 }
@@ -42,7 +52,7 @@ updateSite(site:Site):Observable<Site>{
 
 searchSites(keyword:string):Observable<Site[]>{
   let host=environment.host;
-  return this.http.get<Site[]>(host+"/sites?name_like="+keyword);
+  return this.http.get<Site[]>(host+"/sites?nom_like="+keyword);
 }
 
 deleteSite(site:Site):Observable<void>{

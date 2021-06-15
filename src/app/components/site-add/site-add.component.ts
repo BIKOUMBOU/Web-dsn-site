@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SitesService } from 'src/app/services/sites.service';
 
 
@@ -17,7 +18,7 @@ export class SiteAddComponent implements OnInit {
 
 
  constructor(private fb:FormBuilder,
-             private sitesService: SitesService) { }
+             private sitesService: SitesService, private router : Router,) { }
 
  ngOnInit(): void {
    //Initialisation de Formgroup pour créer un ou des groupe(s) de contrôle sous forme d'un tableau
@@ -47,25 +48,15 @@ export class SiteAddComponent implements OnInit {
  onAddSite() {
   console.log("cliqué");
    this.submitted=true;
-  //  if(this.siteFormGroup?.invalid) return;
+  /* if(this.siteFormGroup?.invalid) return; */
    this.sitesService.addSite(this.siteFormGroup?.value)
      .subscribe(data=>{
        alert("Information(s)Enregistrée(s) avec succès");
      });
+     this.router.navigate(['GetAllSites']).then(() =>{
+      window.location.reload();
+    });
  }
-
- onAddSites() {
-  console.log("cliqué");
-   this.submitted=true;
-  //  if(this.siteFormGroup?.invalid) return;
-   this.sitesService.addSites(this.siteFormGroup?.value)
-     .subscribe(data=>{
-       alert("Information(s)Enregistrée(s) avec succès");
-     });
- }
-
-
-
 
 }
 

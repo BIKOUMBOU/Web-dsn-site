@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="utf-8">
   <title>MiPih DIFTECH|Gestion des Sites</title>
@@ -10,7 +11,7 @@
   <!-- Links -->
 
   <ul class="navbar-nav">
-    <li  class="nav-item">
+    <li class="nav-item">
       <a class="nav-link" routerLink="/">Accueil</a>
     </li>
     <!-- <li  class="nav-item">
@@ -18,56 +19,42 @@
     </li> -->
 
     <!-- Dropdown1_Difftech -->
-    <li  class="nav-item dropdown">
+    <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Difftech
+        Diffuseur technique
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" routerLink="/GetAllSites">Lister</a>
+        <a class="dropdown-item" routerLink="/sites">Lister</a>
+        <a class="dropdown-item" routerLink="/addSite">Nouveau</a>
+        <a class="dropdown-item" routerLink="/EditSite">Modifier</a>
+      </div>
+    </li>
+
+    <!-- Dropdown2_ConsulDsn -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Consultant Dsn
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink="/listeSite">Lister</a>
         <a class="dropdown-item" routerLink="/newSite">Nouveau</a>
         <a class="dropdown-item" routerLink="/updateSite">Modifier</a>
       </div>
     </li>
 
-    <!-- Dropdown2_ConsulDsn -->
-    <li  class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        ConsulDsn
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" routerLink="/sites">Lister</a>
-        <a class="dropdown-item" href="#">Nouveau</a>
-        <a class="dropdown-item" href="#">Modifier</a>
-      </div>
-    </li>
-
     <!-- Dropdown3_ResProjet -->
-    <li  class="nav-item dropdown">
+    <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        ResProjet
+        Responsable Projet
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" routerLink="/sites">Lister</a>
-        <a class="dropdown-item" href="#">Nouveau</a>
+        <a class="dropdown-item" routerLink="/AddSite">Nouveau</a>
         <a class="dropdown-item" href="#">Modifier</a>
       </div>
     </li>
 
-     <!-- Dropdown3_Supervision -->
-     <li  class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Supervision
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" routerLink="/sites">Suivi</a>
-        <a class="dropdown-item" href="#">Information</a>
-        <a class="dropdown-item" href="#">Documentation</a>
-      </div>
-    </li>
-
-   
-   
-
+    
   </ul>
 </nav>
 

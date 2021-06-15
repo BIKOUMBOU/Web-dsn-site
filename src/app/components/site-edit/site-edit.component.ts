@@ -2,12 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { SitesService } from 'src/app/services/sites.service';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Observable } from 'rxjs';
+import { AppDataState, DataStateEnum } from 'src/app/State/site.state';
+import { Site } from 'src/app/modele/site.model';
 
 @Component({
   selector: 'app-site-edit',
   templateUrl: './site-edit.component.html',
 })
+
+
 export class SiteEditComponent implements OnInit {
+
+  sites$:Observable<AppDataState<Site[]>> |null=null;
+ 
+
 
   siteId:number;
     siteFormGroup?:FormGroup;
@@ -46,16 +55,19 @@ export class SiteEditComponent implements OnInit {
           })
         });
     }
-    onUpdateSite() {
+    onEditSite() {
       console.log("cliqué");
       this.submitted=true;
-      this.sitesService.updateSite(this.siteFormGroup?.value)
+      this.sitesService.editSite(this.siteFormGroup?.value)
         .subscribe(data=>{
-          alert("Information(s) mise(s) à jour avec succès");
+          alert("Information(s) mise(s) à jour avec succès")
+          return this.sitesService.getAllSites();
         });
     }
 
   }
+
+
 
 
 

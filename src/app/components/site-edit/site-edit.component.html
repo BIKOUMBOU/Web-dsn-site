@@ -1,7 +1,6 @@
 <div>
     <h2> Editer enregistrement Site </h2>
 </div>
-
 <div class="container">
     <div class="card-header -xl">
         <div class="container" *ngIf="siteFormGroup">
@@ -19,7 +18,7 @@
                     <input type="text" class="form-control" id="inputState" name="priorite" class="form-control"
                         formControlName="nom" [ngClass]="{'is-invalid':submitted && siteFormGroup.controls.nom.errors}">
                     <div *ngIf="submitted && siteFormGroup.controls.nom.errors" class="invalid-feedback">
-                        <div *ngIf="siteFormGroup.controls.nom.errors.required">Name is Required</div>
+                        <div *ngIf="siteFormGroup.controls.nom.errors.required">*Veuillez remplir ce champs</div>
                     </div>
                 </div>
 
@@ -122,6 +121,7 @@
                     <label for="inputState" class="col-sm- col-form-label">ConsulDsn</label>
                     <select id="inputState" name="consuldsn" class="form-control" formControlName="consuldsn">
                         <option selected></option>
+                        <option>Amandine CAZIER</option>
                         <option>Anne-Sophie VANTOMME</option>
                         <option>Aurelie DUPUIS </option>
                         <option>Laurent TREBOUTTE</option>
@@ -154,23 +154,7 @@
 
 
 
-                <!--  <div class="form-group">
-                    <label>Mirth</label>
-                    <input type="text" class="form-control" formControlName="mirth">
-                </div> -->
-
-                <div class="form-group row">
-                    <label for="inputState" class="col-sm- col-form-label">Mirth</label>
-                    <select id="inputState" name="mirth" class="form-control" formControlName="mirth">
-                        <option selected></option>
-                        <option>En cours</option>
-                        <option>Configuré</option>
-                        <option>Fonctionnel</option>
-                        <option>Terminé</option>
-                    </select>
-                </div>
-
-<!-- 
+                 <!-- 
                 <div class="form-group">
                     <label>Ifp</label>
                     <input type="text" class="form-control" formControlName="ifp">
@@ -188,7 +172,27 @@
                 </div>
 
 
-               <!--  <div class="form-group">
+
+                <!--  <div class="form-group">
+                    <label>Mirth</label>
+                    <input type="text" class="form-control" formControlName="mirth">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">Mirth</label>
+                    <select id="inputState" name="mirth" class="form-control" formControlName="mirth">
+                        <option selected></option>
+                        <option>En cours</option>
+                        <option>Configuré</option>
+                        <option>Fonctionnel</option>
+                        <option>Terminé</option>
+                    </select>
+                </div>
+
+               
+
+
+                <!--  <div class="form-group">
                     <label>Websph7</label>
                     <input type="text" class="form-control" formControlName="webserph7">
                 </div> -->
@@ -205,7 +209,7 @@
                 </div>
 
 
-               <!--  <div class="form-group">
+                <!--  <div class="form-group">
                     <label>Configagirh</label>
                     <input type="text" class="form-control" formControlName="configagirh">
                 </div> -->
@@ -216,13 +220,13 @@
                         <option selected></option>
                         <option>En cours</option>
                         <option>Configuré</option>
-                        <option>Fonctionnelle</option>
-                        <option>Terminée</option>
+                        <option>Fonctionnel</option>
+                        <option>Terminé</option>
                     </select>
                 </div>
 
 
-              <!--   <div class="form-group">
+                <!--   <div class="form-group">
                     <label>Configprodige</label>
                     <input type="text" class="form-control" formControlName="configprodige">
                 </div> -->
@@ -233,8 +237,8 @@
                         <option selected></option>
                         <option>En cours</option>
                         <option>Configuré</option>
-                        <option>Fonctionnelle</option>
-                        <option>Terminée</option>
+                        <option>Fonctionnel</option>
+                        <option>Terminé</option>
                     </select>
                 </div>
 
@@ -246,12 +250,30 @@
 
                 <div class="form-group row">
                     <label for="inputState" class="col-sm- col-form-label">NomencdesAbsences</label>
-                    <select id="inputState" name="nomencdesabsences" class="form-control" formControlName="nomencdesabsences">
+                    <select id="inputState" name="nomencdesabsences" class="form-control"
+                        formControlName="nomencdesabsences">
                         <option selected></option>
                         <option>En cours</option>
-                        <option>Configurée</option>
+                        <option>Configuré</option>
                         <option>Fonctionnelle</option>
-                        <option>Terminée</option>
+                        <option>Terminé</option>
+                    </select>
+                </div>
+
+                <!--  <div class="form-group">
+                    <label>Nomencdesemplois</label>
+                    <input type="text" class="form-control" formControlName="nomencdesemplois">
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm- col-form-label">NomencdesEmplois</label>
+                    <select id="inputState" name="nomencdesemplois" class="form-control"
+                        formControlName="nomencdesemplois">
+                        <option selected></option>
+                        <option>En cours</option>
+                        <option>Configuré</option>
+                        <option>Fonctionnelle</option>
+                        <option>Terminé</option>
                     </select>
                 </div>
 
@@ -262,35 +284,20 @@
 
                 <div class="form-group row">
                     <label for="inputState" class="col-sm- col-form-label">NomencdeStatuts</label>
-                    <select id="inputState" name="nomencdestatuts" class="form-control" formControlName="nomencdestatuts">
+                    <select id="inputState" name="nomencdestatuts" class="form-control"
+                        formControlName="nomencdestatuts">
                         <option selected></option>
                         <option>En cours</option>
-                        <option>Configurée</option>
+                        <option>Configuré</option>
                         <option>Fonctionnelle</option>
-                        <option>Terminée</option>
-                    </select>
-                </div>
-
-               <!--  <div class="form-group">
-                    <label>Nomencdesemplois</label>
-                    <input type="text" class="form-control" formControlName="nomencdesemplois">
-                </div> -->
-
-                <div class="form-group row">
-                    <label for="inputState" class="col-sm- col-form-label">NomencdesEmplois</label>
-                    <select id="inputState" name="nomencdesemplois" class="form-control" formControlName="nomencdesemplois">
-                        <option selected></option>
-                        <option>En cours</option>
-                        <option>Configurée</option>
-                        <option>Fonctionnelle</option>
-                        <option>Terminée</option>
+                        <option>Terminé</option>
                     </select>
                 </div>
 
 
                 <div class="modal-footer">
-                    <button class="btn btn-success" (click)="onUpdateSite()">Enregistrer</button>
-                 <!--    <input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
+                    <button class="btn btn-success" (click)="onEditSite()">Enregistrer</button>
+                    <!--    <input type="button" class="btn btn-default" data-dismiss="modal" value="Annuler">
  -->
                 </div>
             </form>

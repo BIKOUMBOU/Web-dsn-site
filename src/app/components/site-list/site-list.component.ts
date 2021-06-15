@@ -7,23 +7,22 @@ import { AppDataState, DataStateEnum } from 'src/app/State/site.state';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-sites',
-  templateUrl: './sites.component.html',
+  selector: 'app-site-list',
+  templateUrl: './site-list.component.html',
+ 
 })
-  export class SitesComponent implements OnInit {
+export class SiteListComponent implements OnInit {
+
   sites$:Observable<AppDataState<Site[]>> |null=null;
   readonly DataStateEnum=DataStateEnum;
 
-/*   keyword: any;
-  p: number =1; */
-
   constructor(private sitesService:SitesService, private router:Router) {}
+
 
   ngOnInit(): void {
 
   }
-    
-
+ 
   GetAllSites() {
     // console.log("start...")
 
@@ -72,24 +71,22 @@ import { Router } from '@angular/router';
     let conf = confirm("Êtes-vous sûr de vouloir supprimer cet enregistrement ?"); 
     if (conf==true) 
     this.sitesService.deleteSite(s)
-    .subscribe(data=> {
+    .subscribe(data=>{
       this.GetAllSites();
     })
 }
 
-AddSite(s: Site){
-    this.router.navigateByUrl("/addSite")
+  NewSite(s: Site){
+    this.router.navigateByUrl("/newSite")
   }
 
   ListeSite(){
     this.router.navigateByUrl("/listeSite")
   }
 
- EditSite(){
+  UpdateSite(){
     this.router.navigateByUrl("/UpdateSite")
   }
-
- 
 
 
   Edit(s: Site) {
@@ -99,5 +96,3 @@ AddSite(s: Site){
 
 
 }
-
-

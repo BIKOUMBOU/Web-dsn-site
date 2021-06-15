@@ -2,11 +2,6 @@
 <nav class="navbar navbar-expand-sm bg-darck navbar-dark">
 
 	<ul class="navbar navbar-nav ">
-		<li>
-			<button (click)="GetAllSites()" class="btn btn-sm btn-outline-info ml-2">Lister</button>
-
-			<!-- <button (click)="NewSite()" class="btn btn-sm btn-outline-info ml-2">Nouveau</button> -->
-		</li>
 	</ul>
 
 	 <ul class="navbar navbar-nav ml-auto">
@@ -51,13 +46,6 @@
 					<thead class="center-thead-dark">
 
 						<tr>
-							
-								<!-- <span class="custom-checkbox">
-									<input type="checkbox" id="selectAll">
-									<label for="selectAll"></label>
-								</span> -->
-
-							<!-- <th (click)="sort('id')">Id&nbsp;<i class=" fa fa-sort text-center th-sm"></i></th> -->
 							<th class="text-center th-sm">Id </th>
 							<th class="text-center th-sm">Priorité </th>
 							<th class="text-center th-sm">Nom </th>
@@ -68,7 +56,7 @@
 							<th class="text-center th-sm">ResProjet </th>
 							<th class="text-center th-sm">ConsulDsn </th>
 							<th class="text-center th-sm">VersAgirh </th>
-							<th class="text-center th-sm">VersProdige </th>
+							<th class="text-center th-sm">Versprodige </th>
 							<th class="text-center th-sm">Ifp </th>
 							<th class="text-center th-sm">Mirth </th>
 							<th class="text-center th-sm">WebserPH7 </th>
@@ -78,18 +66,11 @@
 							<th class="text-center th-sm">NomencdesEmplois </th>
 							<th class="text-center th-sm">NomencdeStatuts </th>
 							<th class="text-center">ACTIONS</th>
-							
-					
 						</tr>
-
 					</thead>
 					<tbody>
 
-
-					   <!-- <tr *ngFor="let s of result.data | orderBy : key : reverse | paginate: {itemsPerPage:14,currentPage:p};">  -->
 						 <tr *ngFor="let s of result.data ">
-
-						
 							<td>{{s.id}} </td>
 							<td>{{s.priorite}} </td>
 							<td>{{s.nom}} </td>
@@ -121,28 +102,11 @@
 								</button>
 							
 							</td>
-
-					<!-- 		<td>
-								<button (click)="onSelect(s)" [ngClass]="s.selected?'btn-success':'btn-success'"
-									class="btn btn-success">
-									<span class="fa fa-eye"></span>
-								</button>
-							</td> -->
-
-							
 						</tr>
 					</tbody>
-					<!-- <pagination-controls>(pageChange)="p = $event"</pagination-controls> -->
+				
 				</table>
 			</div>
 		</div>
 	</ng-container>
 </ng-container>
-
-<!-- <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">4</a></li>
-    <li class="page-item"><a class="page-link" href="#">5</a></li>
-  </ul> -->

@@ -10,7 +10,8 @@ import { SitesService} from './services/sites.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SiteAddComponent } from './components/site-add/site-add.component';
 import { SiteEditComponent } from './components/site-edit/site-edit.component';
-import { SiteInfosComponent } from './site-infos/site-infos.component';
+import { SiteInfosComponent } from './components/site-infos/site-infos.component';
+import { SiteListComponent } from './components/site-list/site-list.component';
 
 
 
@@ -24,6 +25,7 @@ import { SiteInfosComponent } from './site-infos/site-infos.component';
     SiteAddComponent,
     SiteEditComponent,
     SiteInfosComponent,
+    SiteListComponent,
  
    
   ],
